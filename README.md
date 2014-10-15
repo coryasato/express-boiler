@@ -6,12 +6,18 @@ Inspired by [mean.js](meanjs.org).  This boiler uses config methods and the enti
 Environment variables is pulled using [dotenv](https://www.npmjs.org/package/dotenv).  Don't forget to add your .env file to root.  We are only using this for our Session secret at the moment.
 
 ***
+
 Run `gulp default` to build the front end.  Gulp is watching for any changes on these files.  
+
 ***
 
 Browserify is compiling js from `app.js` in our public directory.  This is our front end entry point.  We can build using any framework from here on utilizing Bower for installation.  
 
 When installing with Bower be sure to add package paths to `./config/env/default.js` under it's relative "lib" block (css or js).  This is for development environments to serve vendor files.  On NODE_ENV=production, we serve our files (w/ sourcemaps) along with any vendors concated & minified.  Note** some libs or frameworks may need to be shimmed for deps.
+
+***
+
+Run `node server_cluster.js` if you wish to use Node clustering in production.  This will spread workers to each CPU and replaces any that dies.
 
 ***
 Todo:
