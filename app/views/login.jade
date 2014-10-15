@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container
+    .row
+      h3.col-md-12.text-center Sign in with your prefered social account
+      .col-md-12.text-center
+        a(href='/auth/google').fa-3x
+          span.fa.fa-google-plus &nbsp;
+        a(href='./auth/twitter')
+          span.fa.fa-twitter.fa-3x &nbsp;
+        a(href='./auth/github')
+          span.fa.fa-github.fa-3x &nbsp;
+
+      h3.col-md-12.text-center Or with your account
+      .col-xs-offset-2.col-xs-8.col-md-offset-4.col-md-4 
+        form(action='/auth/signin', method='post')
+          fieldset
+            .form-group
+                label(for='username') Username
+                input(type='text', id='username', name='username', class='form-control', placeholder="Username")
+              .form-group
+                label(for='password') Password 
+                input(type='password', id='password', name='password', class='form-control', placeholder='Password')
+              .form-group.text-center
+                button(type='submit', class='btn btn-warning btn-lg') Login 
+
+          hr
+
+          p Need an account? &nbsp;
+            a(href='/signup') Signup 
+          p There's always &nbsp;
+            a(href='/') Home

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  .container
+    .row
+      .col-xs-10.col-xs-offset-1
+        h3= title
+
+        .well.well-lg
+          p A boilerplate to quickstart Express applications.  Based on mean.js.  
+          p User login provided to demo /user API.
+
+        p Login or Register
+
+        a(href='/login', class='btn btn-primary signin-btn', data-toggle='popover', data-placement='bottom', data-content='')
+          span Local Login
+
+        a(href='/signup', class='btn btn-primary signup-btn', data-toggle='popover', data-placement='bottom', data-content='')
+          span Local signup

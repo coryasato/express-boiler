@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  .container
+    .row
+      h3.col-md-12.text-center Sign up with your prefered social account
+      .col-md-12.text-center
+        a(href='/auth/google')
+          span.fa.fa-google-plus.fa-3x &nbsp;
+        a(href='./auth/twitter')
+          span.fa.fa-twitter.fa-3x &nbsp;
+        a(href='./auth/github')
+          span.fa.fa-github.fa-3x &nbsp;
+
+      h3.col-md-12.text-center Or with your email 
+      .col-xs-offset-2.col-xs-8.col-md-offset-4.col-md-4
+        form(action='/auth/signup', method='post')
+          fieldset
+            .form-group
+              label(for='firstName') First Name 
+              input(type='text', id='firstName', name='firstName', class='form-control', placeholder='First Name')
+            .form-group
+              label(for='lastName') Last Name 
+              input(type='text', id='lastName', name='lastName', class='form-control', placeholder='Last Name')
+            .form-group
+              label(for='email') Email
+              input(type='email', id='email', name='email', class='form-control', placeholder="Email")
+            .form-group
+              label(for='username') Username
+              input(type='text', id='username', name='username', class='form-control', placeholder="Username")
+            .form-group
+              label(for='password') Password 
+              input(type='password', id='password', name='password', class='form-control', placeholder='Password')
+            .form-group.text-center
+              button(type='submit', class='btn btn-warning btn-lg') Signup 
+
+          hr
+
+          p Already have an account? &nbsp;
+            a(href='/login') Login
+          p There's always &nbsp;
+            a(href='/') Home
